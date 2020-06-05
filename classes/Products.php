@@ -17,7 +17,15 @@ class Products{
     $this->prezzo = $_prezzo;
   }
 
+  //methods
+public function calcoloSconto($_perc){
+    $sconto = $this->prezzo * $_perc / 100;
+    $prezzo_scontato = $this->prezzo - $sconto;
+    return number_format($prezzo_scontato, 2);
+  }
 }
 
-// $quaderno = new Products('Quaderno', 'Fabriano', 'A4', '200', 2);
-// var_dump($quaderno);
+$quaderno = new Products('Quadretti','Quaderno', 'Fabriano', 'A4', '200', 2);
+// $quaderno->type = 'Quadretti';
+
+var_dump($quaderno);
